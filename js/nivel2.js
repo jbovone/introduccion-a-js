@@ -44,7 +44,7 @@
 
 
 
-
+let comidasFavoritas = ['Milanesa', 'Papas Fritas', 'Canelones', 'Helado']
 
 
 
@@ -65,6 +65,8 @@
 // imprimi utilizando console.log el resultado.
 
 
+
+console.log(comidasFavoritas)
 
 
 
@@ -92,6 +94,8 @@
 
 
 
+let helado = comidasFavoritas[3]
+console.log(helado)
 
 
 
@@ -118,7 +122,8 @@
 
 
 
-
+comidasFavoritas[0] = 'Chocolate'
+console.log(comidasFavoritas)
 
 // TAREA: console.log todo el array para verificar.
 
@@ -148,8 +153,8 @@
 
 
 
-
-
+comidasFavoritas.push('Milanesa')
+console.log(comidasFavoritas)
 
 // TAREA: console.log todo el array para verificar.
 
@@ -181,11 +186,22 @@
 
 // TAREA: Intenta crear un array como una constante y modifica los valores que contiene.
 
+const roxette = ['r', 'o', 'x', 'e', 't', 't', 'e']
+roxette.push('!')
+console.log(roxette)
 
+roxette[0] = ['P']
+//console.log(roxette) Array(8) /console:[ (1) […], "o", "x", "e", "t", "t", "e", "!" ] a mi no me dio error explicitamente, pero parece bugeado el output.
 
-
-
-
+roxette[0] = ['q']
+roxette[1] = ['w']
+roxette[2] = ['e']
+roxette[3] = ['r']
+roxette[4] = ['u']
+roxette[5] = ['i']
+roxette[6] = ['o']
+roxette[7] = ['p']
+console.log(roxette)
 
 // TAREA: Observa lo que sucede si agregas algo con.push(), cambias algo
 //       con notación de corchetes (array[1]) y
@@ -244,11 +260,10 @@
 */
 
 // TAREA: Usando un bucle 'while', decile a tu computadora que registre los números de
-//       diez a uno.
+//       diez a uno.sf
 
-
-
-
+let numero = 10
+while (numero > 0) { console.log('Fabri says: A programar codemonkeys!! /atizador'); numero = numero - 1 }
 
 
 /*
@@ -268,6 +283,7 @@
 
 // TAREA: Imprimí cada 3er número del 3 al 22 usando un 'bucle for'.
 
+for (i = 3; i < 22; i = i + 3) { console.log(i) }
 
 
 
@@ -296,7 +312,7 @@
 
 // TAREA: Probalo con tu comidasFavoritas array.
 
-
+for (i = 0; i <= comidasFavoritas.length; i++) { console.log('Me Gusta: ' + comidasFavoritas) }
 
 
 
@@ -304,7 +320,7 @@
 /*
     Bucles y Logica
     ===============
-    
+
     Traigamos bucles junto con las declaraciones if / else que aprendimos en
     nivel 1, y hagamos algo interesante.
 
@@ -323,6 +339,11 @@
     }
 */
 
+for (i = 10; i > 0; i = i - 1) {
+    if (i === 5) { console.log('estamos en el medio') }
+    else console.log(i)
+}
+
 // TAREA: Ha llegado el momento de un ejercicio clásico: 'FizzBuzz'.
 
 // Cuenta del 1 al 50 e imprime los números:
@@ -339,8 +360,14 @@
 // 16% 4 = 0 - en 16 tenemos 4 * 4
 // 19% 4 = 3 - en 19 tenemos 4 * 4 + 3, etc.
 
+for (i = 1; i < 51; i = i + 1) {
+    if (i % 3 === 0 && i % 5 === 0) { console.log('Fizz Fuzz') }
+    else if (i % 3 === 0) {
+        console.log('Fizz')                                    //este renglon lo añadio el autoformato.
+    }
+    else if (i % 5 === 0) { console.log('Fuzz') }
 
-
+    else { console.log(i) }}
 
 
 
@@ -349,3 +376,4 @@
 // Levántate, estira las piernas y celebra tu logro.                        //
 // El siguiente paso será seguir las instrucciones en el archivo nivel3.js. //
 //////////////////////////////////////////////////////////////////////////////
+//cool!
