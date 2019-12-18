@@ -17,11 +17,10 @@ obtenerNombre();
 function obtenerNombre() {
     nombreUsuario = prompt('¿Como te llamas?')
 
-    if ( nombreUsuario == false || nombreUsuario === null) {
-        while (nombreUsuario == false || nombreUsuario === null) { nombreUsuario = prompt('¿Como te llamas?') }
-    }
-    
+    while (nombreUsuario == false || nombreUsuario === null) { nombreUsuario = prompt('¿Como te llamas?') }
 }
+
+
 
 
 saludar()
@@ -51,10 +50,16 @@ function saludar() {
 
 
 
-const edadUsuario = Number(prompt('¿Qué edad tienes?'))  
-if (edadUsuario === (34 || 35 || 36) ){alert('Tienes mas o menos mi misma edad')} //32<=edadUsuario<=38 probe un domino matematico asi, no funciono. 
-    else alert('Tenemos una diferencia de edad') 
-//Tarea 3:
+const edadUsuario = Number(prompt('¿Qué edad tienes?'))
+
+    if (edadUsuario === 34 || edadUsuario === 35 || edadUsuario === 36) { 
+        alert('Tienes mas o menos mi misma edad') 
+    } 
+
+    else alert('Tenemos una diferencia de edad')
+
+
+ //Tarea 3:
 // Preguntarle al usuario si tiene documento, y que conteste con "si" o "no".
 // Si dice si, preguntarle la edad.
 // Si la edad es mayor a 18, dejarlo entrar al bar.
@@ -63,16 +68,23 @@ if (edadUsuario === (34 || 35 || 36) ){alert('Tienes mas o menos mi misma edad')
 // Si no entendemos la respuesta, le decimos que no entendimos la respuesta.
 // Punto bonus: SI, NO, Si, No, si, no.
 
-let tieneDocumento 
+let tieneDocumento
 let suEdad
 
+tieneDocumento = prompt('¿Tiene Documento?');
+    if (tieneDocumento === null) { 
+       alert('Dont try to be a wisman kid'), tieneDocumento = 'no' 
+    }
+   
+    if (tieneDocumento.toLowerCase() === 'si') {
+       suEdad = Number(prompt('¿Cual es su edad?'))
+    }
 
+    if (suEdad >= 18) { 
+        prompt('Bienvenido!!') 
+    }
 
- tieneDocumento=prompt('¿Tiene Documento?');
-
-if (tieneDocumento.toLowerCase() ==='si') {
-   suEdad=Number(prompt('¿Cual es su edad?'))
-}  
-if (suEdad>=18) {prompt('Bienvenido!!')} 
-
-    else {prompt('Get Lost!!')} //este es copipasteado porque ya lo habia hecho, es un poco mas primitivo que el anterior.
+    else { 
+        alert('Get Lost!!') 
+     
+   } 

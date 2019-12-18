@@ -208,7 +208,7 @@ let $titulo = document.querySelector('h1')
 
 
 console.log($titulo.textContent = ('r/Agentina Programa hasta hackear la estructura del vacio y redefinir valor de π'));
-//console.log($titulo='asdf') devuelve error undefined: hypotesis: intenta redefinir el tag <h1>? 
+
 
 /*
     Editando atributos
