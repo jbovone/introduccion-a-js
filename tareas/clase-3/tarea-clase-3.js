@@ -52,7 +52,7 @@ function saludar() {
 
 const edadUsuario = Number(prompt('¿Qué edad tienes?'))
 
-    if (edadUsuario === 34 || edadUsuario === 35 || edadUsuario === 36) { 
+    if (edadUsuario >= 34 && edadUsuario <=36) { 
         alert('Tienes mas o menos mi misma edad') 
     } 
 
@@ -67,24 +67,17 @@ const edadUsuario = Number(prompt('¿Qué edad tienes?'))
 // Si no tiene documento, no dejarlo entrar al bar.
 // Si no entendemos la respuesta, le decimos que no entendimos la respuesta.
 // Punto bonus: SI, NO, Si, No, si, no.
-
+ 
 let tieneDocumento
 let suEdad
 
-tieneDocumento = prompt('¿Tiene Documento?');
-    if (tieneDocumento === null) { 
-       alert('Dont try to be a wisman kid'), tieneDocumento = 'no' 
-    }
-   
-    if (tieneDocumento.toLowerCase() === 'si') {
-       suEdad = Number(prompt('¿Cual es su edad?'))
-    }
+tieneDocumento = prompt('¿Tiene Documento?') 
+edad = Number(prompt('¿Cual es su edad?'))
 
-    if (suEdad >= 18) { 
-        prompt('Bienvenido!!') 
-    }
-
-    else { 
-        alert('Get Lost!!') 
+if (tieneDocumento.toLowerCase() === 'si' && edad > 18 ) {
      
-   } 
+    alert('Bienvenido al Bar r/Argentina Programa')
+    
+}
+
+else (alert("y' dun nou enough coding dude"))

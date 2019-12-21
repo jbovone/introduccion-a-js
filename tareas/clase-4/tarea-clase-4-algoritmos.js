@@ -8,18 +8,25 @@ usando  elementos de programación simples y clásicos.
 
 //Desafío de programación #1: Imprimí los números del 1 al 5
 console.log('#1: Imprimí los números del 1 al 5')
-for (i = 5; i > 0; i = i - 1) { console.log(i) }
+for (i = 5; i > 0; i = i - 1) { 
+  console.log(i) 
+}
+
 console.log('EMPECEMOS!!!')
 
 
 //Desafìo de programación  #2: Imprimí los números impares del 1 al 20
 console.log('#2: Imprimí los números impares del 1 al 20')
-for (i = 1; i < 20; i = i + 2) { console.log(i) }
+for (i = 1; i < 20; i+= 2) { 
+  console.log(i) 
+}
 
 
 //Desafío de programación #3: Imprimí la tabla de multiplicación del 7
 console.log('#3: Imprimí la tabla de multiplicación del 7')
-for (i = 0; i <= 70; i = i + 7) { console.log(i) }
+for (i = 0; i <= 70; i = i + 7) { 
+  console.log(i) 
+}
 
 
 //Desafío de programación #4: Imprimí todas las tablas de multiplicación del 1 al 9 /2x1=2 2x2
@@ -29,7 +36,8 @@ function tablaDeMultiplicacion(x) {
   let factor = 1
 
   while (factor <= 10) {
-    (console.log(`${x}x${factor}=${x * factor}`)), factor = factor + 1
+    (console.log(`${x}x${factor}=${x * factor}`)), 
+    factor++
   }
   factor = 1
 }
@@ -43,22 +51,41 @@ tablaDeMultiplicacion(3)
 
 console.log('#5: Calcula el resultado de la suma de los numeros del 1 al 10 en un array.')
 let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-const sumatoriaNumeros = numeros[0] + numeros[1] + numeros[2] + numeros[3] + numeros[4] + numeros[5] + numeros[6] + numeros[7] + numeros[8] + numeros[9]
+//numerosResultado.push(sumarArray(numeros))  
+//console.log(numerosResultado[0]) //umh ahora lo estoy dudando... no era mas bien 1[0] 3[1] 6[2] etc?? bueno, lo hago igual.
 
-console.log(numeros + ' SumaArray = ' + sumatoriaNumeros)
-//const sumatoriaNumeros2 = numeros [0] + [1] + [3] @console.log(sumatoriaNumeros2) = 113??? //nota a posterio ya no se si es replicable.
+function sumaEscalonada(array){ //jaja que nombre le pongo a esto? 
+  
+  let numerosResultado = []
+  let acumulador = 0
+  
+  for (i=0 ; i<array.length ; i++){
+ 
+    acumulador = numerosResultado[i] = array[i] + acumulador
+    console.log(numerosResultado[i])
+
+  }  
+    return numerosResultado
+}
+console.log(sumaEscalonada(numeros))
 
 
 //Desafío de programación #6: Calcula 10! (10 factorial)
 let diezFactorial = 10
-for (i = 10; i > 1; i = i - 1) { diezFactorial = i * diezFactorial }
+for (i = 10; i > 1; i = i - 1) { 
+  diezFactorial *= i
+}
 console.log('#6 DIEZFACTORIAL ES: ' + diezFactorial)
 
 
 //Desafío de programación #7: Calcula la suma de todos los números impares mayores que 10 y menores que 30
 console.log('#7: Calcula la suma de todos los números impares mayores que 10 y menores que 30')
 let sumatoriaNumerosImpares = 0
-for (i = 11; i < 30; i = i + 2) { sumatoriaNumerosImpares = sumatoriaNumerosImpares + i, console.log(`${i} = ${sumatoriaNumerosImpares} +`) }
+for (i = 11; i < 30; i = i + 2) { 
+  sumatoriaNumerosImpares = sumatoriaNumerosImpares + i, 
+  console.log(`${i} = ${sumatoriaNumerosImpares} +`) 
+
+}
 
 
 
@@ -75,13 +102,13 @@ console.log('#9: 86 Fahrenheit es ' + convierteFahrenheitACelcius(86) + ' Celsiu
 
 
 //Desafío de programación #10: Calcula la suma de todos los números en un array de números
-function sumarArray(Array) {
+function sumarArray(array) {
   let sumaArray = 0
-  for (i = 0; i < Array.length; i = i + 1) {
+  for (i = 0; i < array.length; i = i + 1) {
 
-    sumaArray = sumaArray + (Array[i])
-
+    sumaArray = sumaArray + (array[i])
   }
+  
   return sumaArray
 }
 
@@ -89,12 +116,14 @@ console.log('#10 Suma Array: ' + sumarArray(numeros))
 
 //Desafío de programación #11: Calcula el promedio de todos los números en un array de números. (en una función)
 
-function arrayPromedio(Array) {
-  let P = sumarArray(numeros) / Array.length
-  return console.log('#11 Promedio Array: ' + P)
-}
+function calcularPromedio(array) {
+  const promedio = sumarArray(numeros) / array.length
+  
+  return promedio
+}  
 
-arrayPromedio(numeros)
+console.log('#11 Promedio Array: ' + calcularPromedio(numeros) );
+
 
 //Desafío de programación #12: Crea una función que reciba un array de números y devuelva un array conteniendo solo los números positivos
 console.log('#12: Crea una función que reciba un array de números y devuelva un array conteniendo solo los números positivos')
@@ -102,37 +131,40 @@ console.log('#12: Crea una función que reciba un array de números y devuelva u
 let arrayNumerosRandom = [100, 3, 36, -11, 76, -86, 2]
 
 
-function extraeNumerosPositivosDeArray(Array) {
+function extraerNumerosPositivos(array) {
 
   let arrayDeNumerosPositivos = []
 
-  for (i = 0; i <= Array.length; i = i + 1) {
+  for (i = 0; i <= array.length; i = i + 1) {
 
-    if (Array[i] > 0) {
-      arrayDeNumerosPositivos.push(Array[i])
+    if (array[i] > 0) {
+      arrayDeNumerosPositivos.push(array[i])
     }
   }
   return arrayDeNumerosPositivos
 }
 
 console.log(arrayNumerosRandom)
-console.log('Array de Positivos: ' + extraeNumerosPositivosDeArray(arrayNumerosRandom))
+console.log('Array de Positivos: ' + extraerNumerosPositivos(arrayNumerosRandom))
 
 
 //Desafío de programación #13: Find the maximum number in an array of numbers
-let maxValue = []
 
-function findMaxArrayValue(Array) {
 
-  for (i = -1, c = 0; i <= Array.length, c <= Array.length; i = i + 1, c = c + 1) {
-    if (Array[c] >= Array[i] && Array[c] > maxValue) { maxValue = Array[c] }
-    if (Array[i] >= Array[c] && Array[i] > maxValue) { maxValue = Array[i] }
+function findMaxValue(array) {
+  let maxValueStorage = 0
+
+  for (i=0 ; i<array.length ; i++){ 
+    
+    if (array[i] > maxValueStorage) {
+      maxValueStorage = array[i]       //que lindo metodo para reescribir un array... si pones esto al reves. 
+    }   
   }
+  return maxValueStorage
 }
-findMaxArrayValue(arrayNumerosRandom)
-/*viendo esta funcion un par de dias mas tarde, la primer iteraccion en i probablemente sea undefined 
-y la logica me parece que puede simplificarse bastante, pero lo dejo para que lo veas vos profe*/
-console.log('#13 VALOR MAXIMO DEL ARRAY ES: ' + maxValue)
+
+console.log(arrayNumerosRandom)
+console.log('#13 VALOR MAXIMO DEL ARRAY ES: ' + findMaxValue(arrayNumerosRandom))
 
 
 //Desafío de programación #14: Imprimir los primeros 10 dígitos de Fibonacci sin recursión
