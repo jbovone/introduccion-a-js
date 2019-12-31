@@ -7,7 +7,7 @@
 // Imprimir "Hola " y el nombre, " te llamás igual que mi ..."
 // Si no, simplemente imprimir "Hola " + nombre!
 
-
+/*
 let nombreUsuario
 const miNombre = 'Julian';
 const nombreAmigo = 'Jose';
@@ -52,14 +52,14 @@ function saludar() {
 
 const edadUsuario = Number(prompt('¿Qué edad tienes?'))
 
-    if (edadUsuario >= 34 && edadUsuario <=36) { 
-        alert('Tienes mas o menos mi misma edad') 
-    } 
+if (edadUsuario >= 34 && edadUsuario <= 36) {
+    alert('Tienes mas o menos mi misma edad')
+}
 
-    else alert('Tenemos una diferencia de edad')
+else alert('Tenemos una diferencia de edad')
 
-
- //Tarea 3:
+*/
+//Tarea 3:
 // Preguntarle al usuario si tiene documento, y que conteste con "si" o "no".
 // Si dice si, preguntarle la edad.
 // Si la edad es mayor a 18, dejarlo entrar al bar.
@@ -67,17 +67,15 @@ const edadUsuario = Number(prompt('¿Qué edad tienes?'))
 // Si no tiene documento, no dejarlo entrar al bar.
 // Si no entendemos la respuesta, le decimos que no entendimos la respuesta.
 // Punto bonus: SI, NO, Si, No, si, no.
- 
-let tieneDocumento
-let suEdad
 
-tieneDocumento = prompt('¿Tiene Documento?') 
-edad = Number(prompt('¿Cual es su edad?'))
 
-if (tieneDocumento.toLowerCase() === 'si' && edad > 18 ) {
-     
+let tieneDocumento = prompt('¿Tiene Documento?') || 'no'
+let edad = prompt('¿Cual es su edad?') || 'no shit let me enter'
+
+
+if (tieneDocumento.toLowerCase() === 'si' && edad > 18) {
     alert('Bienvenido al Bar r/Argentina Programa')
-    
 }
 
-else (alert("y' dun nou enough coding dude"))
+else alert("y' dun nou enough coding dude")
+      

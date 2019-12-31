@@ -5,12 +5,135 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente la mayor edad
 
 Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuevamente, borrando los inputs ya creados (investigar cómo en MDN).
 */
+const $ingresar = document.querySelector('#ingresar')
+const $calcularButton = document.querySelector('#boton-calcular')
+const $reset = document.querySelector('#reset')
+
+$ingresar.onclick = function (event) {
+    const $integrantes = document.querySelector('#numero-integrantes')
+    const integrantes = Number($integrantes.value)
+    
+    if (integrantes<=0){ 
+        reset()
+
+    } 
+
+    borrarIntegrantes()
+    crearIntegrantes(integrantes)
+    
+
+    event.preventDefault()
+
+}
 
 
-/*
-TAREA:
-Crear una interfaz que permita agregar ó quitar (botones agregar y quitar) inputs+labels para completar el salario anual de cada integrante de la familia que trabaje.
-Al hacer click en "calcular", mostrar en un elemento pre-existente el mayor salario anual, menor salario anual, salario anual promedio y salario mensual promedio.
+$reset.onclick = function reset() {
+    borrarIntegrantes();
 
-Punto bonus: si hay inputs vacíos, ignorarlos en el cálculo (no contarlos como 0).
-*/
+    const $resultado = document.querySelector('#resultado')
+    $calcularButton.className = 'hidden'
+    $resultado.className = 'hidden'
+
+
+}
+
+
+function borrarIntegrantes(){
+    
+    const $integrantes = document.querySelectorAll('.integrantes-input')
+    const $integrantesLabel = document.querySelectorAll('#integrantes-label')
+    const $brLine = document.querySelectorAll('#lines')
+    
+    for(i=0 ; i<$integrantes.length ; i++){
+        $integrantes[i].remove()
+        $integrantesLabel[i].remove()
+        $brLine[i].remove()
+    }
+   
+}
+
+
+
+function crearIntegrantes(evento) {
+    
+    const $integrantesForm = document.querySelector('#integrantes-form')
+    
+
+    for (i = 1; i <= evento; i++) {
+        const $integrantesLabel = document.createElement('label')
+        $integrantesLabel.innerText = `integrante #${i}`
+        $integrantesForm.appendChild($integrantesLabel)
+        $integrantesLabel.id = 'integrantes-label'
+
+        const $integrantesInput = document.createElement('input')
+        $integrantesInput.type = 'number'
+        $integrantesForm.appendChild($integrantesInput)
+        $integrantesInput.className = 'integrantes-input'
+
+        const $brLine = document.createElement('hr')
+        $brLine.id = 'lines'
+        $integrantesForm.appendChild($brLine)
+    }
+    
+    $calcularButton.className = ''
+
+}
+
+
+
+
+
+$calcularButton.onclick = function calcular() {
+    const $integrantes = document.querySelectorAll('.integrantes-input')
+    const integrantes = []
+    
+    for (i = 0; i < $integrantes.length; i++) {
+        integrantes.push(Number($integrantes[i].value))
+    }
+
+    const $resultado = document.querySelector('#resultado')
+    const $mayorEdad = document.querySelector('#mayor-edad')
+    const $menorEdad = document.querySelector('#menor-edad')
+    const $promedioEdad = document.querySelector('#promedio-edad')
+    
+    $resultado.className = ''
+    $mayorEdad.textContent = calcularMayorEdad(integrantes)
+    $menorEdad.textContent = calcularMenorEdad(integrantes)
+    $promedioEdad.textContent = calcularEdadPromedio(integrantes)
+    
+    return false
+}
+
+
+
+function calcularMayorEdad(array){
+    let mayorEdad = 0
+    for (i=0 ; i<array.length ; i++){
+        if (mayorEdad < array[i]){
+            mayorEdad = array[i]
+        }
+    }
+    return mayorEdad
+}
+
+
+function calcularMenorEdad(array){
+    let menorEdad = Infinity
+    for (i=0 ; i<array.length ; i++){
+        if (menorEdad > array[i]){
+            menorEdad = array[i]
+        }
+    }
+    return menorEdad
+}
+
+function calcularEdadPromedio(array){
+    let edadPromedio = 0
+    for(i=0 ; i<array.length ; i++){
+        edadPromedio += array[i] 
+    }
+    edadPromedio = edadPromedio/array.length
+    
+    return edadPromedio 
+}
+

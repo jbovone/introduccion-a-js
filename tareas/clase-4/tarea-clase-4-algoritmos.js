@@ -8,8 +8,8 @@ usando  elementos de programación simples y clásicos.
 
 //Desafío de programación #1: Imprimí los números del 1 al 5
 console.log('#1: Imprimí los números del 1 al 5')
-for (i = 5; i > 0; i = i - 1) { 
-  console.log(i) 
+for (i = 5; i > 0; i = i - 1) {
+  console.log(i)
 }
 
 console.log('EMPECEMOS!!!')
@@ -17,15 +17,15 @@ console.log('EMPECEMOS!!!')
 
 //Desafìo de programación  #2: Imprimí los números impares del 1 al 20
 console.log('#2: Imprimí los números impares del 1 al 20')
-for (i = 1; i < 20; i+= 2) { 
-  console.log(i) 
+for (i = 1; i < 20; i += 2) {
+  console.log(i)
 }
 
 
 //Desafío de programación #3: Imprimí la tabla de multiplicación del 7
 console.log('#3: Imprimí la tabla de multiplicación del 7')
-for (i = 0; i <= 70; i = i + 7) { 
-  console.log(i) 
+for (i = 0; i <= 70; i = i + 7) {
+  console.log(i)
 }
 
 
@@ -36,8 +36,8 @@ function tablaDeMultiplicacion(x) {
   let factor = 1
 
   while (factor <= 10) {
-    (console.log(`${x}x${factor}=${x * factor}`)), 
-    factor++
+    (console.log(`${x}x${factor}=${x * factor}`)),
+      factor++
   }
   factor = 1
 }
@@ -54,25 +54,25 @@ let numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 //numerosResultado.push(sumarArray(numeros))  
 //console.log(numerosResultado[0]) //umh ahora lo estoy dudando... no era mas bien 1[0] 3[1] 6[2] etc?? bueno, lo hago igual.
 
-function sumaEscalonada(array){ //jaja que nombre le pongo a esto? 
-  
+function sumaEscalonada(array) { //jaja que nombre le pongo a esto? 
+
   let numerosResultado = []
   let acumulador = 0
-  
-  for (i=0 ; i<array.length ; i++){
- 
+
+  for (i = 0; i < array.length; i++) {
+
     acumulador = numerosResultado[i] = array[i] + acumulador
     console.log(numerosResultado[i])
 
-  }  
-    return numerosResultado
+  }
+  return numerosResultado
 }
 console.log(sumaEscalonada(numeros))
 
 
 //Desafío de programación #6: Calcula 10! (10 factorial)
 let diezFactorial = 10
-for (i = 10; i > 1; i = i - 1) { 
+for (i = 10; i > 1; i = i - 1) {
   diezFactorial *= i
 }
 console.log('#6 DIEZFACTORIAL ES: ' + diezFactorial)
@@ -81,9 +81,9 @@ console.log('#6 DIEZFACTORIAL ES: ' + diezFactorial)
 //Desafío de programación #7: Calcula la suma de todos los números impares mayores que 10 y menores que 30
 console.log('#7: Calcula la suma de todos los números impares mayores que 10 y menores que 30')
 let sumatoriaNumerosImpares = 0
-for (i = 11; i < 30; i = i + 2) { 
-  sumatoriaNumerosImpares = sumatoriaNumerosImpares + i, 
-  console.log(`${i} = ${sumatoriaNumerosImpares} +`) 
+for (i = 11; i < 30; i = i + 2) {
+  sumatoriaNumerosImpares = sumatoriaNumerosImpares + i,
+    console.log(`${i} = ${sumatoriaNumerosImpares} +`)
 
 }
 
@@ -108,7 +108,7 @@ function sumarArray(array) {
 
     sumaArray = sumaArray + (array[i])
   }
-  
+
   return sumaArray
 }
 
@@ -118,11 +118,11 @@ console.log('#10 Suma Array: ' + sumarArray(numeros))
 
 function calcularPromedio(array) {
   const promedio = sumarArray(numeros) / array.length
-  
-  return promedio
-}  
 
-console.log('#11 Promedio Array: ' + calcularPromedio(numeros) );
+  return promedio
+}
+
+console.log('#11 Promedio Array: ' + calcularPromedio(numeros));
 
 
 //Desafío de programación #12: Crea una función que reciba un array de números y devuelva un array conteniendo solo los números positivos
@@ -152,13 +152,13 @@ console.log('Array de Positivos: ' + extraerNumerosPositivos(arrayNumerosRandom)
 
 
 function findMaxValue(array) {
-  let maxValueStorage = 0
+  let maxValueStorage = -Infinity
 
-  for (i=0 ; i<array.length ; i++){ 
-    
+  for (i = 0; i < array.length; i++) {
+
     if (array[i] > maxValueStorage) {
       maxValueStorage = array[i]       //que lindo metodo para reescribir un array... si pones esto al reves. 
-    }   
+    }
   }
   return maxValueStorage
 }
@@ -210,8 +210,9 @@ function verificaSiEsPrimo(P) {
     if (P % i === 0) { multiplos = multiplos + 1 }
     if (multiplos > 2) { return P = false }
   }
-  if (multiplos === 2) { return P = true }
+    if (multiplos === 2) { return P = true }
 }
+
 
 // linea 174// "return" parece ser inutil, pero si entendi bien no nesesitamos que la comprobacion siga hasta el final al pedo.
 //return console.log(false + multiplos) deberia imprimir 3 independepndientemente de los multiplos que tiene el numero.
@@ -272,7 +273,6 @@ function imprimirNumerosPrimos(cantidadDeNumerosPrimos, storeItOn) {
 }
 
 imprimirNumerosPrimos(100)
-//console.log('STORE_it_Test' + imprimirNumerosPrimos(3, true))
 
 
 //Desafío de programación #19: Crear una función que retorne un array con los primeros números "n-primos" mayores que un número particular definido "alComienzo"
@@ -290,7 +290,7 @@ function ImprimeNumerosPrimosMayoresaConst(constante, cantidad) {
 de variables locales a funciones entre distintas funciones. ConstanteCantidad sigue la logica que StoreIt 
 va a reescribirse en cuanto la Funcion imprimirNumerosPrimos sea invocada denuevo. Esta boludez me causo problemas de todo tipo Fabricio.*/
 
-console.log('19# imprime 6 primos a partir del 16') 
+console.log('19# imprime 6 primos a partir del 16')
 ImprimeNumerosPrimosMayoresaConst(16, 6)
 
 //Desafío de programación #20: Rotar un array hacia la izquierda una posición
@@ -322,39 +322,172 @@ console.log(arrayIz)
 console.log('#22: Invertir un array')
 console.log(arrayIz.reverse())
 
-//te lo entrego hasta ahi Fabricio mientras alimento la imagincion para ver como se haria el 23... 
 
 //Desafío de programación #23: Invertir una cadena de caracteres
+let sentence = 'probando'
+
 //Ejemplo:
-//"dabale arroz a la zorra el abad" debería quedar como "daba le arroz al a zorra elabad"
+//"dabale arroz a la zorra el abad" debería quedar como 
 //"bienvenido" debería quedar como "odinevneib"
 
 
+function invertString(stringVar) {
+  let stringInverted = ""
+
+  for (i = stringVar.length; i >= 0; i--) {
+    stringInverted += stringVar.charAt(i)
+
+    console.log('#23 ' + stringInverted)
+  }
+
+  return stringInverted
+}
+
+invertString(sentence)
 
 //Desafío de programación #24: Crear una función que reciba dos dos arrays (arreglos) como argumentos y returne el resultado en un nuevo arreglo
 //Ejemplo:
- // [1,2,3] con ["a","b","c"] debería quedar como [1,2,3,"a","b","c"]
+// [1,2,3] con ["a","b","c"] debería quedar como [1,2,3,"a","b","c"]
+let Fizz = ['F', 'I', 'Z', 'Z']
+let Buzz = ['B', 'U', 'Z', 'Z']
+
+
+
+function mergeArray(mergedArray, toMergeArray) {
+  for (i = 0; i < toMergeArray.length; i++) {
+    mergedArray.push(toMergeArray[i])
+  }
+  return mergedArray
+  //console.log(arrayA)
+}
+
+console.log('#24 mergeArray ' + mergeArray(Fizz, Buzz))
 
 
 //Desafío de programación #25: Crear una función que reciba dos arrays (arreglos) de números como argumentos y retorne un array con números que estén en uno u otro array, pero NO en ambos.
 //Ejemplo:
 //Nota: Esto se llama "diferencia simétrica" entre conjuntos
- // [1,2,3] y [3,7,11] debería devolver [1,2,7,11]
-  //[5,10,3] y [10,1] debería quedar como [5,3,1]
+// [1,2,3] y [3,7,11] debería devolver [1,2,7,11]
+//[5,10,3] y [10,1] debería quedar como [5,3,1]
+
+function symmetricDiffferential(arrayA, arrayB) {
+  let generalStorage = []
+
+
+  for (i = 0; i < arrayA.length; i++) {               //Tier1: copy the numbers that are in both arrays.
+    for (d = 0; d < arrayB.length; d++) {
+      if (arrayA[i] === arrayB[d]) {
+        generalStorage.push(arrayA[i])
+      }
+    }
+  }
+  //console.log('joints: ' + generalStorage)
+
+  let mark = []
+  let arrayDepure = mergeArray(arrayA, arrayB)
+
+  for (z = 0; z < arrayDepure.length; z++) {         //Tier2: marks the array positions of the joint buddys 
+    for (d = 0; d < generalStorage.length; d++) {
+      if (arrayDepure[z] === generalStorage[d]) {
+        mark.push(z)
+      }
+    }
+  }
+
+  //console.log('mark: ' + mark)
+  //console.log('arraydepure ' + arrayDepure)
+  for (x = mark.length - 1; x >= 0; x--) {                         //Tier3: uses a function call to process out of the array the marked data.
+    arrayDepure = removeArrayElementBy(mark[x], arrayDepure)
+  }
+
+  //console.log('array resultado ' + arrayDepure)
+  return arrayDepure
+}
+
+
+function removeArrayElementBy(position, array) {
+  let storage = []
+  while (position !== array.length - 1) {
+    storage.push(array.pop())
+  }
+
+  storage.reverse()
+  array.pop()
+
+  return mergeArray(array, storage)
+}
+
+let aBox = [1, 98, 3, 5, 6, 12, 15, 89]
+let bBox = [2, 4, 6, 8, 9, 15, 98]
+let cBox = [2, 9]
+
+console.log('#25 diferencia simetrica ' + symmetricDiffferential(aBox, bBox))
+
+
+
 
 //Desafío de programación #26: Crear una función que reciba dos arrays de números y retorne un nuevo array con los elementos que se encuentren en el primer array, pero no en el segundo
 //Nota; Esto se llama "resta" entre conjuntos
 //Ejemplo:
- // [5,1,2,3,4] y [3,4] debería devolver [5,1,2]
+// [5,1,2,3,4] y [3,4] debería devolver [5,1,2]
+
+function setSubtract(array, subtract) {
+  let mark = []
+
+  for (z = 0; z < array.length; z++) {
+    for (d = 0; d < subtract.length; d++) {
+      if (array[z] === subtract[d]) {
+        mark.push(z)
+      }
+    }
+  }
+
+  for (x = mark.length - 1; x >= 0; x--) {
+    arrayResult = removeArrayElementBy(mark[x], array)
+  }
+  console.log('#26 setSubtract: ' + arrayResult)
+  return arrayResult
+}
+
+setSubtract(bBox, cBox)
 
 //Desafío de programación #27: Crear una función que reciba un array de números como argumento y retorne un array con los elementos distintos
 //Ejemplo:
-  // [1,2,3,4,5,4,3,2,1,0] debería retornar [1,2,3,4,5,0]
+let eBox = [1, 2, 3, 4, 5, 4, 3, 2, 1, 0] //debería retornar [1,2,3,4,5,0]
 
+function extractDuplicated(array) {
+  let arrayResult
 
-//==== FALTAN TRADUCIR
+  for (i = array.length - 1; i >= 1; i--) {
+    for (z = i - 1; z >= 0; z--) {
+      if (array[i] === array[z]) {
+        arrayResult = removeArrayElementBy(z, array)
+      }
+    }
+  }
+   return arrayResult
+}
+let dBox = [5, 3, 4, 5, 3, 5, 11, 13]
+
+console.log('#27 extract duplicated: ' + extractDuplicated(dBox))
+extractDuplicated(eBox)
+
 //Desafío de programación #28: Calculate the sum of first 100 prime numbers
+
+console.log('#28 sum of first 100 prime numbers: ' + sumarArray(imprimirNumerosPrimos(100, true)))
+
+
 //Desafío de programación #29: Print the distance between the first 100 prime numbers
+
+function getDistanceBetweenPrimes(number){
+   let array = imprimirNumerosPrimos(number+1 , true)
+  
+  for(i = 1; i<number; i++){console.log(`#29 distance between ${i+1} y ${i+2} : ${array[i+1] - array[i]}`)  
+
+  }
+}
+
+getDistanceBetweenPrimes(100)
 //Desafío de programación #30-a: Create a function that will add two positive numbers of indefinite size. The numbers are received as strings and the result should be also provided as string.
 //Desafío de programación #30-b: Create a function that will add two positive numbers of indefinite size. The numbers are received as strings and the result should be also provided as string.
 /*Desafío de programación #31-a. Create a function that will return the number of words in a text
