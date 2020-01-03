@@ -125,8 +125,8 @@
 //       Utilizá console.log para ver lo que obtuviste!
 
 
-
-
+let nuestroTitulo = document.querySelector('h1')
+//console.log(nuestroTitulo)
 
 
 /*
@@ -146,6 +146,7 @@
 
 // TAREA: Obtené todos los elementos <li> de la página en una variable llamada mediaLinks.
 
+let mediaLinks = document.querySelectorAll('li')
 
 
 
@@ -154,7 +155,7 @@
 // TAREA: Ahora utilizá console.log para ver la cantidad de 
 // elementos li que hay con mediaLinks.length
 
-
+console.log(mediaLinks)
 
 
 
@@ -164,7 +165,7 @@
 
 
 
-
+for (i = 0; i < mediaLinks.length; i = i + 1) { console.log(mediaLinks[i]) }
 
 
 /*
@@ -184,8 +185,8 @@
 // TAREA: Obtené el contenido de nuestro elemento 'h1'
 // y utilizá console.log para mostrarlo.
 
-
-
+let $titulo = document.querySelector('h1')
+//console.log($titulo.textContent)
 
 
 
@@ -206,7 +207,7 @@
 // TAREA: Hagamos un nuevo título! Cambiá el contenido de nuestro 'h1' y ponele lo que quieras.
 
 
-
+console.log($titulo.textContent = ('r/Agentina Programa hasta hackear la estructura del vacio y redefinir valor de π'));
 
 
 /*
@@ -224,8 +225,12 @@
 // TAREA: Actualizá el valor del atributo 'src' de nuestra etiqueta 'img' a "img/kittens.jpeg".
 
 
-
-
+let $kittens = document.querySelector('img')
+$kittens.src = "img/kittens.jpeg"
+$kittens.alt = "una linda imagen de gatitos"
+//la modificacion de estos atributos probablemente tiene mas sentido en la estructura o index.html
+//pero si quisera conseguir una comprobacion que la linea: $kittens.alt = "una linda imagen de gatitos" 
+//funciona como se supone ¿como lo haria? dejar el puntero en la imagen no muestra nada... no se.
 
 
 /*
@@ -248,9 +253,10 @@
 
 // Tarea: Obtené cualquier elemento de la página y cambiale algunos estilos.
 
+let $subTitulo = document.querySelector('h2')
+//console.log($subTitulo.textContent)
 
-
-
+$subTitulo.style.backgroundColor = 'red'
 
 
 /*
@@ -269,8 +275,14 @@
     const nuevoParrafo = document.createElement('p');
     const textoParrafo = document.createTextNode('Yeeee!');
     nuevoParrafo.appendChild(textoParrafo);
-    nodoPagina.appendChild(nuevoParrafo);
+    nodoPagina.appendChild(nuevoParrafo); //estos metodos parecen no funcionar... el nodo carga despues de los <scripts>??
 */
+
+const nodoPagina = document.querySelector('header')
+const nuevoParrafo = document.createElement('h3')
+const nuevoTexto = document.createTextNode('uff cuantos metodos nuevos, piedad!!')
+nuevoParrafo.appendChild(nuevoTexto)
+nodoPagina.appendChild(nuevoParrafo)
 
 // Tarea: Todavía seguís teniendo a los gatitos en tu pantalla? A mí me gusta el logo y los gatitos.
 //       Creá una nueva imagen con nuestro logo como fuente, y ponela
@@ -279,6 +291,9 @@
 // P.S. También les podés dar estilos al nuevo nodo que creaste.
 
 
+const nodoImagen = document.createElement('img');
+nodoImagen.src = 'img/woman_bw.jpg';
+document.querySelector('header').appendChild(nodoImagen)
 
 
 
@@ -288,3 +303,4 @@
 // Levántate, estira las piernas y celebra tu logro.                      //
 // ¡Creo que esto amerita un festejo!                                     //
 ////////////////////////////////////////////////////////////////////////////
+//neat

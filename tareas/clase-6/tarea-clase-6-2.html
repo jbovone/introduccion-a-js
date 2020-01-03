@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Wages</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='tarea-clase-6-2-main.css'>
+    
+</head>
+<body>
+    <h1>Wages Income Calculator:</h1>
+    <form>
+        <label for="">Wages:</label>
+        <br>
+        <br>
+        <div id="wages"></div>
+        <br>
+        <button type="button" id="add">Add Your Family Wages</button>
+        <button id="remove" class="hidden" type="button">Remove</button>
+        <button type="submit" class="hidden" id="process">Process Wages</button>
+    
+    </form>
+    <div class="hidden" id="results">
+        <p> The highest annual wage is: <strong id="highest-annual-wage"></strong></p>
+        <br>        
+        <p> The lowest annual wage is: <strong id="lowest-annual-wage"></strong></p>
+        <br>
+        <p>The average annual wage is: <strong id="average-annual-wage"></strong></p>
+        <br>
+        <p>The average monthly wage is: <strong id="monthly-average-wage"></strong></p>
+    </div>
+    <div class="hidden" id="empty-fields"><p>Complete all the Fields</p></div>
+    <script src='tarea-clase-6-2.js'></script>
+    <script src='tarea-clase-6-2-calculos.js'></script>
+</body>
+</html>

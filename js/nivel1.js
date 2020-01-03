@@ -40,6 +40,7 @@
 
 // Tarea: Ahora te toca a vos! Acá abajo escribí una alerta que diga "Hola mundo!"
 
+//alert('Hola Mundo!')
 
 // Tarea: Una vez que la alerta funcione, comentala poniendo '//' en la línea donde está el código y guardá los cambios.
 // Una vez que recargás la página, ya no debería aparecer más.
@@ -47,6 +48,7 @@
 
 // Tarea: Ahora probá hacer un console.log de un mensaje que queramos.
 
+console.log('seti signaling.. bipp bipp')
 
 // Consejo: Para recargar el navegador podemos apretar 'CMD + R' en Mac y 'CTRL + R' en
 //      Windows.
@@ -102,6 +104,8 @@
 
 // TAREA: Creá 2 variables indefinidas, llamadas numeroUno y numeroDos.
 
+let numeroUno
+let numeroDos
 
 /*
     Podés usar el nombre de tus variables pare representar qué información tienen adentro, por ejemplo:
@@ -115,7 +119,10 @@
 // Crear 2 variables nuevas, una con tu nombre, la segunda con tu edad. Dales un nombre apropriado y
 // mostralas con un alert.
 
+let miNombre = 'Julian'
+let miEdad = ' 35'
 
+alert(miNombre + miEdad)
 // Consejo: para mostrar 2 variables de texto al mismo tiempo, las podés unir usando el signo '+'. Ejemplo:
 
 /*
@@ -150,9 +157,11 @@
 
 // TAREA: Crear una constante y mostrarla con un alert
 
+const gravity = 9.81
 
 // TAREA: Intentar asignar un valor a una constante y ver qué pasa (mirar la consola)
 
+//gravity = 2
 
 // Consejo: No te olvides de comentar (//) los alerts y los errores intencionales (como en la tarea anterior) para
 // que los alerts no aparezcan cada vez, y para que los errores no hagan que el programa se detenga.
@@ -183,6 +192,10 @@
 // la 1ra variable multiplicada (con el operador *) por la 2nda variable.
 // Mostrar el valor de resultadoMultiplicacion con un alert o un console.log
 
+let diez = 10
+let tres = 3
+let resultadoMultiplicacion = diez * tres
+console.log(resultadoMultiplicacion)
 
 /*
     Funciones
@@ -239,10 +252,24 @@
 // Escribí código para que devuelva (return) la suma de numero1 y numero2
 // Ejecutá la función sumar y mostrá su resultado en la consola
 
+function sumar(numero1, numero2) { return numero1 + numero2 }
+
+//console.log(sumar(8, 20))
+
+
+
 
 // TAREA: Ahora creemos otra función llamada 'restar'
 //       Que acepte 2 números como parámetro y los reste, y que devuelva ese valor.
 // Ejecutá la función con los números 5 y 1 y mostralos con console.log
+
+let ocho = 8
+let cinco = 5
+
+function restar(numero1, numero2) { return numero1 - numero2 }
+
+//console.log(restar(ocho, cinco))
+
 
 
 // Consejo: Sabías que en vez de pasar los números directamente a tu función podés crear variables con esos números
@@ -327,6 +354,15 @@
 // No se olviden de hacer un console.log para ver el resultado!
 //
 
+let operador = '-'
+
+if (operador === '+') { console.log(sumar(ocho, cinco)) } //(operador = '') asigna el valor a la variable rompiendo el codigo. === =/= = que aterradoramente facil de olvidar es esto. 
+else { console.log(restar(ocho, cinco)) }
+
+
+
+
+
 // TAREA: Cambiar el operador a '-', y fijarse que llame a la función 'restar' en vez de a la de 'sumar'.
 
 
@@ -341,7 +377,7 @@
         //algo
     else
         //algo que va a pasar si no se cumple ningún otra condición
-        
+
 
     Ejemplo:
 
@@ -354,14 +390,14 @@
         console.log('Nuestro número es igual a 7');
     }
 
-    Consejo: Podemos usar la cantidad de 'else if' que queramos uno después del otro, 
+    Consejo: Podemos usar la cantidad de 'else if' que queramos uno después del otro,
     el primero que es 'verdadero' es el único que pasa.
 */
 
 // TAREA: Creemos 2 funciones más: dividir y multiplicar.
 
-
-
+function dividir(x, y) { return x / y }
+function multiplicar(x, y) { return x * y }
 
 
 // TAREA: Reescribamos el if-else que teníamos y extendámolos, agregando:
@@ -372,37 +408,56 @@
 
 
 
+function determinaroperacion(operador) {
+
+    if (operador === '+') { return console.log(sumar(ocho, cinco)) }
+    else if (operador === '-') { return console.log(restar(ocho, cinco)) }
+    else if (operador === '/') { return console.log(dividir(ocho, cinco)) }
+    else if (operador === '*') { return console.log(mulpiplicar(ocho, cinco)) }
+    else { return console.log('perdon, no conozco ese operador') }
+}
+
+determinaroperacion('j') //pense que encerrar esto en una funcion era mas neato, naturalmente, operador aca es un parametro no un let.
+                         //autoformato pone todos los condicionales en el mismo indent, no se si es visualmente mas adecuado o no.   
+
 
 
 /*
-    Operadores Booleanos
-    =================
-    Poner un signo de exclamación (!) antes de un valor Booleano nos da el valor OPUESTO.
-    Este operador ! se llama el operador "not".
-    
-    El resultado de una comparación es un valor Booleano, lo podemos guardar en una variable así:
+Operadores Booleanos
+=================
+Poner un signo de exclamación (!) antes de un valor Booleano nos da el valor OPUESTO.
+Este operador ! se llama el operador "not".
 
-    const bool = (1 < 2);
+El resultado de una comparación es un valor Booleano, lo podemos guardar en una variable así:
 
-    Después podemos chequear si 'bool' es verdadero o falso (true o false) usando console.log
+const bool = (1 < 2);
 
-    console.log(bool); // Devuelve veradero (TRUE), porque 1 es menor a 2
-    console.log(!bool); // devuelve "no verdadero"... es decir falso (FALSE)
-    console.log(bool); // El valor original no se ve afectado, sigue siendo veradero, TRUE
+Después podemos chequear si 'bool' es verdadero o falso (true o false) usando console.log
 
-    También podemos asignar un valor booleano directamente a una variable o constante con
-    las palabras reservadas (keywords) true y false:
+console.log(bool); // Devuelve veradero (TRUE), porque 1 es menor a 2
+console.log(!bool); // devuelve "no verdadero"... es decir falso (FALSE)
+console.log(bool); // El valor original no se ve afectado, sigue siendo veradero, TRUE
 
-    const elPesoEsEstable = false;
-    let maradonaMejorQuePele = true;
+También podemos asignar un valor booleano directamente a una variable o constante con
+las palabras reservadas (keywords) true y false:
+
+const elPesoEsEstable = false;
+let maradonaMejorQuePele = true;
 */
 
 
 // TAREA: usando el operador !, Intentá invertir una variable (de true a false, o de false a true) e imprimí el
 // resultado en la consola.
 
+const bool = (1 === 3)
+//console.log(bool)
+let laNuevaPolitica='la politica del fracaso ha fracasado = TRUE'
+laNuevaPolitica = bool
+console.log(laNuevaPolitica)
 
 ////////////////////////////////////////////////////////////////////////////
 // Felicitaciones! Terminaste el Nivel 1 de la introducción a JavaScript! //
 // El siguiente nivel es el que está en nivel2.js                         //
 ////////////////////////////////////////////////////////////////////////////
+
+//nice.
