@@ -13,17 +13,17 @@ const $botonIngresar = document.querySelector("#boton-ingresar") //notamental: n
 
 $botonIngresar.onclick = function data() { 
 
-   const ingresarNombre = document.querySelector("#ingresar-nombre").value 
-   const ingresar2DoNombre = document.querySelector("#ingresar-2do-nombre").value 
-   const ingresarApellido = document.querySelector("#ingresar-apellido").value
-   const ingresarEdad = document.querySelector("#ingrese-edad").value 
-   const output = `${ingresarNombre} ${ingresar2DoNombre} ${ingresarApellido} ${ingresarEdad}`  //esto probablemente puede hacerse con un query al form, o con un class tag en form, seria mas simple, pero no se.
+   const nombre = document.querySelector("#ingresar-nombre").value 
+   const segundoNombre = document.querySelector("#ingresar-2do-nombre").value 
+   const apellido = document.querySelector("#ingresar-apellido").value
+   const edad = document.querySelector("#ingrese-edad").value 
+   const output = `${nombre} ${segundoNombre} ${apellido} ${edad}`  //esto probablemente puede hacerse con un query al form, o con un class tag en form, seria mas simple, pero no se.
 
    
    document.querySelector("#output").value = output
  
    const $titulo = document.querySelector('h1')
-   $titulo.textContent = `hacked@r/argentinaPrograma ${ingresarNombre}`
+   $titulo.textContent = `hacked@r/argentinaPrograma ${nombre}`
   
 
    return false

@@ -41,13 +41,13 @@ $reset.onclick = function reset() {
 function borrarIntegrantes(){
     
     const $integrantes = document.querySelectorAll('.integrantes-input')
-    const $integrantesLabel = document.querySelectorAll('#integrantes-label')
-    const $brLine = document.querySelectorAll('#lines')
+    const $integrantesLabel = document.querySelectorAll('.integrantes-label')
+    const $separador = document.querySelectorAll('.lines')
     
     for(i=0 ; i<$integrantes.length ; i++){
         $integrantes[i].remove()
         $integrantesLabel[i].remove()
-        $brLine[i].remove()
+        $separador[i].remove()
     }
    
 }
@@ -63,16 +63,16 @@ function crearIntegrantes(evento) {
         const $integrantesLabel = document.createElement('label')
         $integrantesLabel.innerText = `integrante #${i}`
         $integrantesForm.appendChild($integrantesLabel)
-        $integrantesLabel.id = 'integrantes-label'
+        $integrantesLabel.className = 'integrantes-label'
 
         const $integrantesInput = document.createElement('input')
         $integrantesInput.type = 'number'
         $integrantesForm.appendChild($integrantesInput)
         $integrantesInput.className = 'integrantes-input'
 
-        const $brLine = document.createElement('hr')
-        $brLine.id = 'lines'
-        $integrantesForm.appendChild($brLine)
+        const $separador = document.createElement('hr')
+        $separador.className = 'lines'
+        $integrantesForm.appendChild($separador)
     }
     
     $calcularButton.className = ''
